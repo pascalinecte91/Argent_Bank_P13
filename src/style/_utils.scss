@@ -1,0 +1,31 @@
+$sizes: (
+  mini: 0.9rem,
+  base: 1rem,
+  xs: 1.1rem,
+  s: 1.2rem,
+  m: 1.25rem,
+  l: 1.5rem,
+  xl: 2.5rem,
+  max: 5rem,
+);
+
+$colors :(
+  neutral: "#2c3e50",
+  green: "#00bc77",
+  lightGray: "#ccc",
+  veryDarkGreen: "#005834",
+  darkGreen: "#00935d",
+  darkBlue: "#12002b"
+);
+
+html {
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }

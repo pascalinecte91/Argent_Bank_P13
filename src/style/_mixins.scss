@@ -1,0 +1,36 @@
+@mixin fontAvenir {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin responsBigDesktop {
+    @media screen and (min-width: 1286px) {
+        @content;
+    }
+}
+
+@mixin responsDesktop {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin responsTablets {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin responsSmartphones {
+    @media screen and (max-width: 525px) {
+        @content;
+    }
+}
+
+@mixin responsSmallSmartphones {
+    @media screen and (max-width: 425px) {
+        @content;
+    }
+}
