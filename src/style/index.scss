@@ -1,17 +1,24 @@
 
-// Path: src    \style\mixins.scss
-// Path: src    \style\base.scss
-// Path: src    \style\layout.scss
-// Path: src    \style\components.scss
-// Path: src    \style\pages.scss
-
 
 @import "style/mixins";
 
 @import "components/footer/footer";
 @import "components/header/header";
+@import "components/feature/feature";
+@import "components/form/register";
+@import "components/account/account";
 
-@import "pages";
+
+@import "pages/notFound/_notFound";
+@import "pages/home/home";
+@import "pages/login/login";
+@import "pages/userProfile/user";
+
+
+
+
+
+
 
 
 

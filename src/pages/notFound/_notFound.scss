@@ -1,0 +1,30 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+ 
+
+  &__nbre {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
+    margin-top: 20vh;
+  }
+  &__content {
+    font-weight: 500;
+    font-size: 2.125rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  &__link {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 10vh;
+
+    &__link:hover {
+      text-decoration: underline;
+    }
+  }
+
+}

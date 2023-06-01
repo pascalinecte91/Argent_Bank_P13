@@ -1,29 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import Navbar from "components/navBar/Navbar";
-import Footer from "components/footer/Footer";
+import { NavLink } from "react-router-dom";
 
 const NotFound = () => {
-  let navigate = useNavigate();
   return (
-    <>
-      <Navbar />
-      <section className="notFound">
-        <div className="notFound__number">404</div>
-        <div className="notFound__content">
-          Oups! La page que vous demandez n'existe pas.
-        </div>
-        <div className="notFound__button"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Retourner à la page d'accueil
-        </div>
+		<section className="notFound">
+			<h1 className="notFound__nbre">404 ⛔</h1>
+			<p className="notFound__content">Oups!  Cette page n'existe pas!</p>
+			<NavLink className="notFound__link" to="/">
+				Dirigez-vous  vers la page d'accueil
+			</NavLink>
+		</section>
+	);
 
-        <Footer />
-      </section>
-    </>
-  );
 };
 export default NotFound;
