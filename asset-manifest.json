@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Argent_Bank_p13/static/css/main.e10bb2b7.css",
+    "main.js": "/Argent_Bank_p13/static/js/main.0a3ab218.js",
+    "static/media/argentBankLogo.png": "/Argent_Bank_p13/static/media/argentBankLogo.e031a16c76ab9bbbf78a.png",
+    "index.html": "/Argent_Bank_p13/index.html",
+    "main.e10bb2b7.css.map": "/Argent_Bank_p13/static/css/main.e10bb2b7.css.map",
+    "main.0a3ab218.js.map": "/Argent_Bank_p13/static/js/main.0a3ab218.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e10bb2b7.css",
+    "static/js/main.0a3ab218.js"
+  ]
+}
