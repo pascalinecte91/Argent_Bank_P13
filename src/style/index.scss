@@ -1,12 +1,15 @@
 
 
 @import "style/mixins";
+@import "style/utils";
 
 @import "components/footer/footer";
 @import "components/header/header";
 @import "components/feature/feature";
 @import "components/form/register";
-@import "components/account/account";
+@import "components/account/accountCard";
+@import "components/banner/banner";
+
 
 
 @import "pages/notFound/_notFound";

@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
+    console.log('toto');
     const dispatch = useDispatch();
     const navigate = useNavigate ();
     const token = useSelector((state) => state.login.token);
@@ -79,4 +80,4 @@ const Register = () => {
 }
 
 
-export default Register
+export default Register;

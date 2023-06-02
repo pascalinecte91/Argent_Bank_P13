@@ -16,7 +16,7 @@ const Feature = () => {
         
             <p>{feature.description}</p>
             <p></p>
-         <h2></h2>
+     
           </section>
         );
       })}

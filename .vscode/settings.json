@@ -44,7 +44,14 @@
           "editor.defaultFormatter": "esbenp.prettier-vscode" // formatter
         },
         "javascript.preferences.importModuleSpecifierEnding": "js",// terminaison des imports
-        "typescript.preferences.importModuleSpecifierEnding": "js"
+        "typescript.preferences.importModuleSpecifierEnding": "js",
+        "tabnine.disableLineRegex": [
+        
+        ],
+        "tabnine.disableFileRegex": [
+          
+          
+        ]
         }
       
       

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import dataAccount from "data/dataMockedUserAccount.js";
 import Register from 'components/form/Register.jsx';
-import Account from "components/account/Accounts.jsx";
+import AccountCard from "components/account/AccountCard.jsx";
 import { getDataProfile } from 'redux/reducer/userReducer.js';
 import { getProfile } from 'data/dataApi.js';
 
@@ -32,9 +32,9 @@ const Profile = () => {
     return (
         <main className="main bg-dark">
             <Register />
-            <h2 className="sr-only">Accounts</h2>
+            <h2 className="sr-only">Transactions</h2>
             {dataAccount.map((acct) => (
-                <Account key={acct.id} dataAccount={acct} />
+                <AccountCard key={acct.id} dataAccount={acct} />
             ))}
         </main>
     );

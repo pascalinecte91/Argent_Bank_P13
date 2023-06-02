@@ -15,7 +15,7 @@ const Login = () => {
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
-            navigate("/profile");
+            navigate("/user");
         }
     }, [navigate]);
 
@@ -25,7 +25,7 @@ const Login = () => {
         if (data.body) {
             setError(null);
             dispatch(getLoggedIn(data.body.token));
-            navigate('/profile');
+            navigate('/user');
         }
         else {
             setError(data.message.replace('Error: ',""));
