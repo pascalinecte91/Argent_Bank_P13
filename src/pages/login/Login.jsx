@@ -1,61 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { login } from "data/dataApi.js";
-
 import { useDispatch } from "react-redux";
 import { getLoggedIn } from "redux/reducer/loginReducer.js";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const Login = () => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-    const [error, setError] = React.useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({ email: null, password: null });
 
-    useEffect(() => {
-        if (localStorage.getItem("token")) {
-            navigate("/user");
-        }
-    }, [navigate]);
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/user");
+    }
+  }, [navigate]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        let data = await login(email, password);
-        if (data.body) {
-            setError(null);
-            dispatch(getLoggedIn(data.body.token));
-            navigate('/user');
-        }
-        else {
-            setError(data.message.replace('Error: ',""));
-        }
-    };
+  const handleLogin = async () => {
+    const data = await login(email, password);
+    if (data.body) {
+      setErrors({ email: null, password: null });
+      dispatch(getLoggedIn(data.body.token));
+      navigate('/user');
+    } else {
+      const errorMessage = data.message.replace('Error: ', '');
+      if (errorMessage.includes('email')) {
+        setErrors({ email: errorMessage, password: null });
+      } else if (errorMessage.includes('password')) {
+        setErrors({ email: null, password: errorMessage });
+      } else {
+        setErrors({ email: errorMessage, password: null });
+      }
+    }
+  };
 
-    return (
-        <main className="main bg-dark">
-            <section className="sign-in-content">
-                <i className="fa fa-user-circle sign-in-icon"></i>
-                <h1>Sign In</h1>
-                <form onSubmit={handleSubmit}>
-                    <div className="input-wrapper">
-                        <label htmlFor="email">Username</label>
-                        <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} required/>
-                    </div>
-                    <div className="input-wrapper">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} required/>
-                    </div>
-                    <div className="input-remember">
-                        <input type="checkbox" id="remember-me"/>
-                        <label htmlFor="remember-me">Remember me</label>
-                    </div>
-                    <span className="error">{error}</span>
-                    <button className="sign-in-button">Sign In</button>
-                </form>
-            </section>
-        </main>
-    );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin();
+  };
+
+  return (
+    <div className="form">
+      <i className="form__icon fa fa-user-circle"></i>
+      <h1 className="form__title">Sign</h1>
+      <form onSubmit={handleSubmit} id="signInForm">
+        <div>
+          <label className="form__label" htmlFor="userName"> Email </label>
+          <input className="form__input" type="text" placeholder="banby@gmail.com" onChange={(e) => setEmail(e.target.value)} value={email} />
+          {errors.email && <p className="form__error">{errors.email}</p>}
+        </div>
+        <div>
+          <label className="form__label" htmlFor="password"> Password </label>
+          <input className="form__input" type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+          {errors.password && <p className="form__error">{errors.password}</p>}
+        </div>
+        <div className="remember">
+          <input type="checkbox" />
+          <label htmlFor="remember">Remember me</label>
+        </div>
+        <p className="userNotFound"></p>
+        <div className="signInButton">
+          <input className="form__input" type="submit" value="Se connecter" />
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default Login;

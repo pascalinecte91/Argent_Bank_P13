@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import Header from 'components/header/Header.jsx';
 import Footer from 'components/footer/Footer.jsx';
@@ -17,13 +17,15 @@ const App = () => {
   return (
     <>
       <Header />
+    
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signIn" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/user" element={<User />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
+     
     </>
   );
 };

@@ -1,3 +1,4 @@
+
 .accountCard {
     display: flex;
     justify-content: space-between;
@@ -14,7 +15,7 @@
     &__amount {
     margin: 0;
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: bold; 
 }
 &__description {
     margin: 0;
@@ -24,11 +25,13 @@
     padding: 0;
     font-size: 1rem;
     font-weight: normal;
+    width: 18.75rem;
 }
 
 &__content {
     width: 100%;
     flex: 1;
+   
 }
 
 &__button {
@@ -38,9 +41,10 @@
     font-size: 1.1rem;
     font-weight: bold;
     margin-top: 1rem;
-    border-color: #00bc77;
-    background-color: #00bc77;
+    border-color: #645af2;
+    background-color: #645af2;
     color: #fff;
+    border-radius: 4px;
     cursor: pointer;
 }
 }

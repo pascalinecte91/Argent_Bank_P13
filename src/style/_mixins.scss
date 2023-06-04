@@ -5,32 +5,29 @@
 }
 
 
-@mixin responsBigDesktop {
-    @media screen and (min-width: 1286px) {
+$smartphone: 475px;
+$tablet: 768px;
+$desktop: 1024px;
+$big-desktop: 1280px;
+
+@mixin min-max($min, $max) {
+    @media only screen and (min-width: $min) and (max-width: $max) {
         @content;
     }
 }
 
-@mixin responsDesktop {
-    @media screen and (min-width: 1024px) {
-        @content;
-    }
-}
+// // Utilisation du mixin
+// @include min-max($smartphone, $tablet - 1px) {
+   
+// }
 
-@mixin responsTablets {
-    @media screen and (min-width: 768px) {
-        @content;
-    }
-}
+// @include min-max($tablet, $desktop - 1px) {
+    
+// }
 
-@mixin responsSmartphones {
-    @media screen and (max-width: 525px) {
-        @content;
-    }
-}
+// @include min-max($desktop, $big-desktop - 1px) {
+// }
 
-@mixin responsSmallSmartphones {
-    @media screen and (max-width: 425px) {
-        @content;
-    }
-}
+// @include min-max($big-desktop, null) {
+//     // code ici pour les grands ordinateurs de bureau
+// }
