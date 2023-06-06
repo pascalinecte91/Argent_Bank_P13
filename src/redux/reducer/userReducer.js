@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 export const userReducer = createSlice({
     name: "profile",
@@ -10,33 +10,37 @@ export const userReducer = createSlice({
         createdAt: "",
         updatedAt: ""
     },
-    reducers : {
-        getDataProfile : (state, action) => {
-            state.id = action.payload.id
-            state.email = action.payload.email
-            state.firstName = action.payload.firstName
-            state.lastName = action.payload.lastName
-            state.createdAt = action.payload.createdAt
-            state.updatedAt = action.payload.updatedAt
-            localStorage.setItem("firstName", action.payload.firstName)
+    reducers: {
+        getDataProfile: (state, action) => {
+            state.id = action.payload.id;
+            state.email = action.payload.email;
+            state.firstName = action.payload.firstName;
+            state.lastName = action.payload.lastName;
+            state.createdAt = action.payload.createdAt;
+            state.updatedAt = action.payload.updatedAt;
+            localStorage.setItem("firstName", action.payload.firstName);
+            localStorage.setItem("lastName", action.payload.lastName);
         },
         updateDataProfile: (state, action) => {
-            state.firstName = action.payload.firstName
-            state.lastName = action.payload.lastName
-            state.updatedAt = action.payload.updatedAt
-            localStorage.setItem("firstName", action.payload.firstName)
+            state.firstName = action.payload.firstName;
+            state.lastName = action.payload.lastName;
+            state.updatedAt = action.payload.updatedAt;
+            localStorage.setItem("firstName", action.payload.firstName);
+            localStorage.setItem("lastName", action.payload.lastName);
         },
-        deleteDataProfile : (state) => {
+        deleteDataProfile: (state) => {
             console.log(state);
-            state.id = ""
-            state.email = ""
-            state.firstName = ""
-            state.lastName = ""
-            state.createdAt = ""
-            state.updatedAt = ""
-            localStorage.removeItem("firstName")
+            state.id = "";
+            state.email = "";
+            state.firstName = "";
+            state.lastName = "";
+            state.createdAt = "";
+            state.updatedAt = "";
+            localStorage.removeItem("firstName");
+            localStorage.removeItem("lastName");
         }
     }
-})
-export const {getDataProfile, updateDataProfile, deleteDataProfile } = userReducer.actions
-export default userReducer.reducer 
+});
+
+export const { getDataProfile, updateDataProfile, deleteDataProfile } = userReducer.actions;
+export default userReducer.reducer;

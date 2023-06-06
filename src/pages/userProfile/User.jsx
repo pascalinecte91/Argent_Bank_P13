@@ -18,7 +18,7 @@ const Profile = () => {
     React.useEffect(() => {
         const getProfileEl = async () => {
             const data = await getProfile(token);
-            console.log("data:",);
+            console.log("data:", data);
             if (data !== "error") {
                 dispatch(getDataProfile(data));
             }

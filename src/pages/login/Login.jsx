@@ -13,13 +13,17 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
+
       navigate("/user");
     }
   }, [navigate]);
 
   const handleLogin = async () => {
     const data = await login(email, password);
+    console.log(data);
     if (data.body) {
+      // Stocker le jeton dans localStorage
+      localStorage.setItem("token", data.body.token);
       setErrors({ email: null, password: null });
       dispatch(getLoggedIn(data.body.token));
       navigate('/user');

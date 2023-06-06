@@ -3,11 +3,15 @@ import argentBankLogo from "assets/argentBankLogo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getLoggedOut } from "redux/reducer/loginReducer.js";
 
+
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.login.connected);
   let firstName = useSelector((state) => state.profile.firstName);
+  let lastName = useSelector((state) => state.profile.lastName);
+
+  console.log(firstName, lastName);
 
   if (localStorage.getItem("token") && !firstName) {
     firstName = localStorage.getItem("firstName");
@@ -26,9 +30,9 @@ const Header = () => {
       {isLogged ? (
         <div className="nav__logged">
           <NavLink to={"/user"} className="nav__button">
-            <i className="fa fa-user-circle"></i>{firstName}
+            <i className="fa fa-user-circle nav__icon"></i>{firstName}
           </NavLink>
-          <NavLink to={"/signIn"} onClick={logout} className="nav__link">
+          <NavLink to={"/"} onClick={logout} className="nav__link">
             <i className="fa fa-sign-out"></i>Sign Out
           </NavLink>
         </div>

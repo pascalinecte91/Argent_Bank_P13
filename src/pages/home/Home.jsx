@@ -4,7 +4,7 @@ import Banner from "components/banner/Banner.jsx";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home__container">
       <Banner />
       <Feature />
     </div>

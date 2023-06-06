@@ -19,7 +19,8 @@
   gap: 5px;
   align-items: baseline;
   &:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      color: #42b983;
   }
 }
 
@@ -43,6 +44,11 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  text-decoration: none;
+}
+&__icon {
+font-size: 20px;
+color: #42b983;
 }
 }
 // @media screen and (max-width: 425px) {
