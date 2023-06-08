@@ -1,10 +1,13 @@
 import dataMockedFeature from "data/dataMockedFeature.js";
 import React from "react";
 
+/**
+ * Composant représentant les fonctionnalités.
+ * @returns {JSX.Element} Élément JSX représentant le composant.
+ */
 const Feature = () => {
-  // Rendu du composant
   return (
-    // parcours le tableau dataMockedFeature pour generer un element pour chaque {objet}
+    // Parcours le tableau dataMockedFeature pour générer un élément pour chaque objet
     <section className="features">
       {dataMockedFeature.map((feature, index) => {
         return (
@@ -17,6 +20,7 @@ const Feature = () => {
             <h3 className="features__title">{feature.title}</h3>
 
             <p>{feature.description}</p>
+
             <p></p>
           </section>
         );

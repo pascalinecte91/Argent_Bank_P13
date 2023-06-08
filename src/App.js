@@ -8,6 +8,7 @@ import User from 'pages/userProfile/User';
 import NotFound from 'pages/notFound/NotFound';
 import Home from 'pages/home/Home.jsx';
 import Login from 'pages/login/Login.jsx';
+import Transaction from 'pages/transaction/Transaction.jsx';
 import "style/index.scss";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/" element={<Home />} /> 
         <Route path="/login" element={<Login />} />  
         <Route path="/user" element={<User />} /> 
+        <Route path='/transactions' element={<Transaction />} />
         <Route path="/*" element={<NotFound />} /> 
       </Routes>
       <Footer color={isHome ? 'footer__home' : ''} /> 

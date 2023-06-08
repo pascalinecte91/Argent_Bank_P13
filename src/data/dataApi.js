@@ -19,7 +19,7 @@ const login = async (email, password) => {
 };
 
 const getProfile = async (token) => {
-    console.log(token);
+  
     const response = await fetch('http://localhost:3001/api/v1/user/profile', {
         method: 'POST',
         headers: {

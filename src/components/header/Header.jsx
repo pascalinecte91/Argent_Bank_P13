@@ -3,20 +3,24 @@ import argentBankLogo from "assets/argentBankLogo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getLoggedOut } from "redux/reducer/loginReducer.js";
 
-
+/**
+ * Composant représentant l'en-tête de la page.
+ * @returns {JSX.Element} Élément JSX représentant le composant.
+ */
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.login.connected);
   let firstName = useSelector((state) => state.profile.firstName);
-  let lastName = useSelector((state) => state.profile.lastName);
 
-  console.log(firstName, lastName);
-
+  // Si le prénom n'est pas disponible dans le state, on le récupère depuis le stockage local
   if (localStorage.getItem("token") && !firstName) {
     firstName = localStorage.getItem("firstName");
   }
 
+  /**
+   * Gère la déconnexion de l'utilisateur.
+   */
   const logout = () => {
     dispatch(getLoggedOut());
     navigate("/");

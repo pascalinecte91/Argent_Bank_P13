@@ -74,6 +74,7 @@ Ouvrez [http://localhost:3000](http://localhost:3000) pour la voir dans votre na
 
 npm start
 
+jsdoc
 ___
 ___
 

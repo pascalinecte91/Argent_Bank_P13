@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/arrayTransaction/ArrayTransaction.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/arrayTransaction/ArrayTransaction.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
+
+/**
+ * Composant représentant un tableau de transactions.
+ * @returns {JSX.Element} Élément JSX représentant le composant.
+ */
+
+const ArrayTransaction = () => {
+    // Définition du state pour le tableau de transactions
+  const [itemArray, setItemArray] = useState([
+    {
+        id: 1,
+        date: "20 juin 2022",
+        description: 'Golden Sun Bakery',
+        amount: "$ 5.00",
+        balance: '$ 2082.79',
+        transactionType: "electronic",
+        category: "food",
+        notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        isOpen: false
+      },
+      {
+        id: 2,
+        date: '21 juin 2022',
+        description: 'Golden Sun Bakery',
+        amount: '$ 10.00',
+        balance: '$ 2087.79',
+        transactionType: "electronic",
+        category: "food",
+        notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        isOpen: false
+      },
+      {
+        id: 3,
+        date: '22 juin 2022',
+        description: 'Golden Sun Bakery',
+        amount: '$ 30.00',
+        balance: '$ 2117.79',
+        transactionType: "electronic",
+        category: "food",
+        notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        isOpen: false
+      },
+      {
+        id: 4,
+        date: '23 juin 2022',
+        description: 'Golden Sun Bakery',
+        amount: '$ 40.00',
+        balance: '$ 2147.79',
+        transactionType: "electronic",
+        category: "food",
+        notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        isOpen: false
+      },
+      {
+        id: 5,
+        date: '24 juin 2022',
+        description: 'Golden Sun Bakery',
+        amount: '$ 50.00',
+        balance: '$ 2187.79',
+        transactionType: "flower",
+        category: "flower",
+        notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        isOpen: false
+      },
+    
+  ]);
+
+   /**
+   * Fonction pour basculer la valeur de `isOpen` pour une transaction donnée.
+   * @param {number} id - L'ID de la transaction.
+   */
+  
+  const toggle = (id) => {
+    const changedItems = itemArray.map((item) =>
+      item.id === id ? { ...item, isOpen: !item.isOpen } : item
+    );
+    setItemArray(changedItems);
+  };
+
+  return (
+    &lt;>
+      &lt;section className="table">
+        &lt;table className="table__content">
+          &lt;thead>
+            &lt;tr className="table__items">
+              &lt;th>&lt;/th>
+              &lt;th>DATE&lt;/th>
+              &lt;th>DESCRIPTION&lt;/th>
+              &lt;th>AMOUNT&lt;/th>
+              &lt;th>BALANCE&lt;/th>
+            &lt;/tr>
+          &lt;/thead>
+          &lt;tbody>
+            {itemArray.map((item) => (
+              &lt;React.Fragment key={item.id}>
+                &lt;tr className={`table__row ${item.isOpen ? 'open' : ''}`}>
+                  &lt;td>
+                    &lt;p className="table__chevron" onClick={() => toggle(item.id)}>
+                      {item.isOpen ? (
+                        &lt;i className="fa fa-chevron-up">&lt;/i>
+                      ) : (
+                        &lt;i className="fa fa-chevron-down">&lt;/i>
+                      )}
+                    &lt;/p>
+                  &lt;/td>
+                  &lt;td>{item.date}&lt;/td>
+                  &lt;td>{item.description}&lt;/td>
+                  &lt;td>{item.amount}&lt;/td>
+                  &lt;td>{item.balance}&lt;/td>
+                &lt;/tr>
+                {item.isOpen &amp;&amp; (
+                  &lt;tr className="table__details">
+                    &lt;td colSpan="5">
+                      &lt;div className="table__details">
+                        &lt;p>Transaction Type: {item.transactionType} &lt;/p>
+                        &lt;p>Category: {item.category} &lt;i className=" fa fa-pencil pencil-icon" />&lt;/p>
+                        &lt;p>Notes: {item.notes} &lt;i className=" fa fa-pencil pencil-icon" />&lt;/p>
+                      &lt;/div>
+                    &lt;/td>
+                  &lt;/tr>
+                )}
+              &lt;/React.Fragment>
+            ))}
+          &lt;/tbody>
+        &lt;/table>
+      &lt;/section>
+    &lt;/>
+  );
+};
+
+export default ArrayTransaction;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AccountCard">AccountCard</a></li><li><a href="global.html#ArrayTransaction">ArrayTransaction</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#CardName">CardName</a></li><li><a href="global.html#Feature">Feature</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#loginReducer">loginReducer</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jun 09 2023 10:51:08 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

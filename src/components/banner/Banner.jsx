@@ -1,6 +1,11 @@
 import React from "react";
 import bankTree from "assets/bank-tree.jpeg";
 
+/**
+ * Composant représentant la bannière.
+ * @returns {JSX.Element} Élément JSX représentant le composant.
+ */
+
 const Banner = () => {
   return (
     <section className="banner">
