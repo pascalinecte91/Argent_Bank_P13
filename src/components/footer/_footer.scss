@@ -1,17 +1,19 @@
 .footer {
-  position: fixed;
+ position: fixed;
   bottom: 0;
   width: 100%;
-    display: flex;
-    justify-content: center;
-    // border-top: 2px solid #ccc;
-    padding: 1rem 0 1.5rem;
-    background-color: #ffffff;
-    &__content {
-      margin: 0;
-      padding: 0;
-    }
-    &__home {
-      background-color: #e0e6ed;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 1.5rem;
+  background-color: #ffffff;
+  &__content {
+    margin: 0;
+    padding: 0;
+  }
+  &__home {
+    background-color: #e0e6ed;
+    @include min-max($smartphone, $tablet - 1) {
+      background-color: #ffffff;
     }
   }
+}

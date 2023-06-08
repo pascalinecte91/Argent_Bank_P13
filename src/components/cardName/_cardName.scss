@@ -1,67 +1,67 @@
 .card {
-    margin-bottom: 30px;
-    &__name {
-        color: #42b983;
-      }
+  margin-bottom: 30px;
+  &__name {
+    color: $formSubmit;
+  }
 }
 
 .edit {
-    margin-bottom: 0.2em;
+  margin-bottom: 0.2em;
 }
 
 .edit-button {
-    border-color: #645cef;
-    background-color: #645cef;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-    cursor: pointer;
+  border-color: $cardButton;
+  background-color: $cardButton;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 .form-group {
-    display: flex;
-    justify-content: center;
-    gap : 2rem;
-   
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  input {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  @media screen and (max-width: 575px) {
+    gap: 0.5rem;
     input {
-        width: 200px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+      width: 150px;
     }
-    @media screen and (max-width: 575px) {
-        gap : 0.5rem;
-        input {
-            width: 150px;
-        }
+  }
+  @media screen and (max-width: 420px) {
+    gap: 0.5rem;
+    input {
+      width: 100px;
     }
-    @media screen and (max-width: 420px) {
-        gap : 0.5rem;
-        input {
-            width: 100px;
-        }
-    }
+  }
 }
 
 .button-group {
-    display: flex;
-    justify-content: center;
-    gap : 2rem;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 20px;
+  border-radius: 4px;
+  button {
+    border-color: white;
+    background-color: white;
+    color: #6458f5;
+    font-size: 16px;
+    font-weight: bolder;
+    width: 100px;
+    padding: 6px;
+    cursor: pointer;
     border-radius: 4px;
-    button {
-        border-color: white;
-        background-color: white;
-        color: #6458f5;
-        font-size: 16px;
-        font-weight: bolder;
-        width: 100px;
-        padding: 6px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
+  }
 }

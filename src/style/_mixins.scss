@@ -4,8 +4,8 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-$smartphone: 475px;
+$smartphone: 320px;
+$smartLarge: 425px;
 $tablet: 768px;
 $desktop: 1024px;
 $big-desktop: 1280px;
@@ -16,18 +16,9 @@ $big-desktop: 1280px;
     }
 }
 
-// // Utilisation du mixin
-// @include min-max($smartphone, $tablet - 1px) {
-   
-// }
 
-// @include min-max($tablet, $desktop - 1px) {
-    
-// }
+// colors
+$cardButton:#645af2;
+$formSubmit:#0ac181;
+$body:#E0E6ED;
 
-// @include min-max($desktop, $big-desktop - 1px) {
-// }
-
-// @include min-max($big-desktop, null) {
-//     // code ici pour les grands ordinateurs de bureau
-// }

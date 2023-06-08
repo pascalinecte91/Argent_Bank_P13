@@ -46,8 +46,8 @@ const Login = () => {
 
   return (
     <div className="form">
-      <i className="form__icon fa fa-user-circle"></i>
-      <h1 className="form__title">Sign</h1>
+      <i className="fa fa-user-circle form__icon "></i>
+      <h1 className="form__title">Sign In</h1>
       <form onSubmit={handleSubmit} id="signInForm">
         <div>
           <label className="form__label" htmlFor="userName"> Email </label>
@@ -59,13 +59,13 @@ const Login = () => {
           <input className="form__input" type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
           {errors.password && <p className="form__error">{errors.password}</p>}
         </div>
-        <div className="remember">
+        <div className="form__remember">
           <input type="checkbox" />
           <label htmlFor="remember">Remember me</label>
         </div>
         <p className="userNotFound"></p>
-        <div className="signInButton">
-          <input className="form__input" type="submit" value="Se connecter" />
+        <div className="form__signIn">
+          <input className="form__input" type="submit" value="SignIn " />
         </div>
       </form>
     </div>

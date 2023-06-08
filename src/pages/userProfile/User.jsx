@@ -33,7 +33,7 @@ const Profile = () => {
     return (
         <section>
             <Register />
-        <aside>
+        <aside className='account'>
             {dataAccount.map((acct) => (
                 <AccountCard key={acct.id} dataAccount={acct} />
             ))}

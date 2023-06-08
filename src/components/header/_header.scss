@@ -4,65 +4,53 @@
   align-items: center;
   padding: 5px 20px;
   background-color: #ffffff;
+  &__logged {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+  }
+  &__image {
+    max-width: 100%;
+    width: 200px;
+  }
+
+  &__icon {
+    font-size: 20px;
+    color: $formSubmit;
+
+    @include min-max($smartphone, $tablet - 1px) {
+      flex-direction: column;
+    }
+  }
   a {
-      font-weight: bold;
-      color: #2c3e50;
-      &.router-link-exact-active {
-          color: #42b983;
-      }
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 5px;
+    &.router-link-exact-active {
+      color: $formSubmit;
+    }
   }
 
-&__link {
-  text-decoration: none;
-  margin-right: 0.5rem;
-  display: flex;
-  gap: 5px;
-  align-items: baseline;
-  &:hover {
+  &__link {
+    text-decoration: none;
+    margin-right: 2.5rem;
+    display: flex;
+    gap: 5px;
+    align-items: baseline;
+    &:hover {
       text-decoration: none;
-      color: #42b983;
+      color: $formSubmit;
+    }
+    @include min-max($smartphone, $tablet - 1px) {
+      margin-right: inherit;
+      font-size: 15px;
+      align-items: center;
+    }
   }
 }
-
-&__logo {
-  display: flex;
-  align-items: center;
-}
-
-&__image {
-  max-width: 100%;
-  width: 200px;
-}
-
-&__logged {
-  display: flex;
-  align-items: center;
-  gap: 20px
-}
-
-&__button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  text-decoration: none;
-}
-&__icon {
-font-size: 20px;
-color: #42b983;
-}
-}
-// @media screen and (max-width: 425px) {
-//   .main-nav-logo-image {
-//       max-width: 100%;
-//       width: 150px;
-//   }
-//   .main-nav-link {
-//       margin-right: 0px;
-//   }
-//   .main-nav div {
-//       font-size: 0.8em;
-//   }
-//   .main-nav .nav {
-//       gap: 10px
-//   }
-// }

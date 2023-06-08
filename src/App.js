@@ -20,13 +20,9 @@ const App = () => {
     
       <Routes>
         <Route path="/" element={<Home />} /> 
-        {/* => la page d'accueil */}
-        <Route path="/login" element={<Login />} /> 
-        {/* => la page de connexion */}
+        <Route path="/login" element={<Login />} />  
         <Route path="/user" element={<User />} /> 
-        {/* => la page du profil utilisateur */}
         <Route path="/*" element={<NotFound />} /> 
-        {/* => toutes les autres pages non définies */}
       </Routes>
       <Footer color={isHome ? 'footer__home' : ''} /> 
     </>
