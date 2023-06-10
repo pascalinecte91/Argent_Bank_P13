@@ -19,7 +19,7 @@ const AccountCard = ({dataAccount}) => {
           <p className="accountCard__description">{dataAccount.description}</p>
         </div>
         <div className="accountCard__content">
-          <NavLink to="/transactions">
+          <NavLink to="/transactions" className="accountCard__view">
           <button className="accountCard__button">View transactions</button>
           </NavLink>
         </div>

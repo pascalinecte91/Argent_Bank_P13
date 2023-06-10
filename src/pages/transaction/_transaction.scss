@@ -17,4 +17,12 @@
     font-size: 2rem;
     margin: 0px;
   }
+  @include min-max($smartphone, $tablet - 1) {
+    width:91%;
+    position: absolute;
+    top: 9%;
+    left: 4%;
+  }
+
+
 }

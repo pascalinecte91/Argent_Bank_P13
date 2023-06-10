@@ -6,14 +6,14 @@ import Register from 'components/cardName/CardName.jsx';
 import AccountCard from "components/account/AccountCard.jsx";
 import { getDataProfile } from 'redux/reducer/userReducer.js';
 import { getProfile } from 'data/dataApi.js';
-
-
 import { getLoggedOut } from 'redux/reducer/loginReducer.js';
 
 const Profile = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const token = useSelector((state) => state.login.token);
+  
+
    
     React.useEffect(() => {
         const getProfileEl = async () => {

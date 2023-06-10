@@ -35,11 +35,14 @@ export const loginReducer = createSlice({
         },
         /**
          * Action pour maintenir la connexion de l'utilisateur.
-         * @param {Object} state - État actuel du reducer.
+         * si un token est dans le local storage , il indiquera que le user est connecté
+         * il pourra alors acceder aux fonctions reservees aux users connectes
+         * @param {Object} state 
          */
         stayLogged : (state) => {
             state.connected = true
             state.token = localStorage.getItem("token")
+             // le token est stocké dans le localStorage ( action declenchee dans getLoggin)
             state.date = localStorage.setItem("date", new Date())
         }
     }
