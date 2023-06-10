@@ -6,7 +6,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from 'components/header/Header.jsx';
 import Footer from 'components/footer/Footer.jsx';
 
-import User from 'pages/userProfile/User';
+import User from 'pages/userProfile/UserProfile';
 import NotFound from 'pages/notFound/NotFound';
 import Home from 'pages/home/Home.jsx';
 import Login from 'pages/login/Login.jsx';

@@ -1,7 +1,7 @@
 @mixin fontAvenir {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 $smartphone: 320px;
@@ -11,14 +11,12 @@ $desktop: 1024px;
 $big-desktop: 1280px;
 
 @mixin min-max($min, $max) {
-    @media only screen and (min-width: $min) and (max-width: $max) {
-        @content;
-    }
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
 }
 
-
 // colors
-$cardButton:#645af2;
-$formSubmit:#0ac181;
-$body:#E0E6ED;
-
+$cardButton: #645af2;
+$formSubmit: #0ac181;
+$body: #e0e6ed;

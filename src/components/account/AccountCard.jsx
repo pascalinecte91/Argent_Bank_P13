@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 
 /**
  * Composant représentant une carte de compte.
- * @param {Object} props - Les propriétés du composant.
  * @param {Object} props.dataAccount - Les données du compte.
  * @param {string} props.dataAccount.title - Le titre du compte.
  * @param {number} props.dataAccount.amount - Le montant du compte.
@@ -11,7 +10,7 @@ import { NavLink } from "react-router-dom";
  */
 
 const AccountCard = ({dataAccount}) => {
-  return (
+  return(
       <section className="accountCard">
         <div className="accountCard__content">
           <h3 className="accountCard__title">{dataAccount.title}</h3>
