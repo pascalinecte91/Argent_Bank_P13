@@ -24,6 +24,7 @@ const Header = () => {
   const logout = () => {
     dispatch(getLoggedOut());
     navigate("/");
+    console.log(getLoggedOut);
   };
 
   return (

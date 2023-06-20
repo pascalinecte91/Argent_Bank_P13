@@ -26,6 +26,7 @@ export const loginReducer = createSlice({
          * @param {Object} state - État actuel du reducer.
          */
         getLoggedOut : (state) => {
+            console.log('getLoggedOut called');
             state.connected = false
             state.token = ""
             state.date = ""

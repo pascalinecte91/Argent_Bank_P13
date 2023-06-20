@@ -31,8 +31,9 @@ const App = () => {
    */
   useEffect(() => {
     const token = localStorage.getItem('token');
+    console.log(localStorage.getItem('token'));
     if (token) {
-      dispatch(stayLogged());
+      dispatch(stayLogged(token));
     }
   }, [dispatch]);
 
