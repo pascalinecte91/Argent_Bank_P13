@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { stayLogged } from 'redux/reducer/loginReducer.js'; 
-import { Route, Routes, useLocation } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { stayLogged } from "redux/reducer/loginReducer.js";
+import { Route, Routes, useLocation } from "react-router-dom";
 
-import Header from 'components/header/Header.jsx';
-import Footer from 'components/footer/Footer.jsx';
+import Header from "components/header/Header.jsx";
+import Footer from "components/footer/Footer.jsx";
 
-import User from 'pages/userProfile/UserProfile';
-import NotFound from 'pages/notFound/NotFound';
-import Home from 'pages/home/Home.jsx';
-import Login from 'pages/login/Login.jsx';
-import Transaction from 'pages/transaction/Transaction.jsx';
+import User from "pages/userProfile/UserProfile";
+import NotFound from "pages/notFound/NotFound";
+import Home from "pages/home/Home.jsx";
+import Login from "pages/login/Login.jsx";
+import Transaction from "pages/transaction/Transaction.jsx";
 
 import "style/index.scss";
 
@@ -21,7 +21,7 @@ import "style/index.scss";
  */
 const App = () => {
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === "/";
   const dispatch = useDispatch();
 
   /**
@@ -30,8 +30,8 @@ const App = () => {
    * se reconnecter à chaque fois pour se diriger ailleurs
    */
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    console.log(localStorage.getItem('token'));
+    const token = localStorage.getItem("token");
+    console.log(localStorage.getItem("token"));
     if (token) {
       dispatch(stayLogged(token));
     }
@@ -39,16 +39,16 @@ const App = () => {
 
   return (
     <>
-      <Header /> 
-    
+      <Header />
+
       <Routes>
-        <Route path="/" element={<Home />} /> 
-        <Route path="/login" element={<Login />} />  
-        <Route path="/user" element={<User />} /> 
-        <Route path='/transactions' element={<Transaction />} />
-        <Route path="/*" element={<NotFound />} /> 
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/transactions" element={<Transaction />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
-      <Footer color={isHome ? 'footer__home' : ''} /> 
+      <Footer color={isHome ? "footer__home" : ""} />
     </>
   );
 };

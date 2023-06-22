@@ -75,6 +75,8 @@ Ouvrez [http://localhost:3000](http://localhost:3000) pour la voir dans votre na
 npm start
 
 npm run docs ( script)
+
+npm run deploy : mise à jour  githubPages
 ___
 ___
 
