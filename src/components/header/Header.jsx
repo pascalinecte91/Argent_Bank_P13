@@ -22,8 +22,8 @@ const Header = () => {
    * Gère la déconnexion de l'utilisateur.
    */
   const logout = () => {
-    dispatch(getLoggedOut());
-    navigate("/");
+    dispatch(getLoggedOut()); // appel de l'action redux pour deconnexion
+    navigate("/"); // redirigé vers la page d'accueil
     console.log(getLoggedOut);
   };
 
@@ -34,14 +34,16 @@ const Header = () => {
       </NavLink>
       {isLogged ? (
         <div className="nav__logged">
+          {/* Lien vers la page de l'utilisateur avec son nom */}
           <NavLink to={"/user"} className="nav__button">
             <i className="fa fa-user-circle nav__icon"></i>{firstName}
           </NavLink>
+           {/* Lien de déconnexion */}
           <NavLink to={"/"} onClick={logout} className="nav__link">
             <i className="fa fa-sign-out"></i>Sign Out
           </NavLink>
         </div>
-      ) : (
+      ) : ( // si l' user n'est pas connecté
         <div>
           <NavLink to={"/login"} className="nav__link">
             <i className="fa fa-user-circle"></i>Sign In

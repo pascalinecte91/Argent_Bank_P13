@@ -15,12 +15,9 @@ const login = async (email, password) => {
   });
   // Récupère les données de la réponse
   const data = await response.json();
-  // Si la connexion a réussi, renvoie les données
-  if (data.status === 200) {
-    return data;
-  } else {
-    return "error";
-  }
+
+  
+  return data;
 };
 
 /**

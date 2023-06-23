@@ -11,19 +11,22 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({ email: null, password: null });
 
+
+  // hook verifie si l'user est deja connecté
   useEffect(() => {
     if (localStorage.getItem("token")) {
 
-      navigate("/user");
+      navigate("/user"); // redirige vers la page du user
     }
   }, [navigate]);
 
   const handleLogin = async () => {
     const data = await login(email, password);
-    console.log(data);
-    if (data.body) {
+     // Si la connexion a réussi, renvoie les données
+    if (data?.status === 200) {
       // Stocker le jeton dans localStorage
       localStorage.setItem("token", data.body.token);
+      console.log("token", data.body.token);
       setErrors({ email: null, password: null });
       dispatch(getLoggedIn(data.body.token));
       navigate('/user');
@@ -39,6 +42,7 @@ const Login = () => {
     }
   };
 
+  // gere la soumission du formulaire de connexion
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin();
