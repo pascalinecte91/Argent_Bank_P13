@@ -4,7 +4,8 @@ import { updateDataProfile } from 'redux/reducer/userReducer.js';
 import { updateProfile } from 'data/dataApi.js';
 
 /**
- * Composant représentant la carte du nom.
+ * Composant représentant la carte du nom
+ * et permet de le modifier en utilisant un formulaire
  * @returns {JSX.Element} Élément JSX représentant le composant.
  */
 const CardName = () => {
@@ -19,17 +20,20 @@ const CardName = () => {
    */
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //reinitialise la valeur du 1er et 2 eme champs à 1 string vide
     e.target[0].value = '';
     e.target[1].value = '';
     console.log(`Submitting new values: ${firstName}, ${lastName}`);
 
     try {
+      //recup le token du localStorage avec la clé token avec methode
       const token = localStorage.getItem("token");
 
+      // appelle fn updateProfile avec les 3 param
       const updatedProfile = await updateProfile(firstName, lastName, token);
       console.log('Profile updated:', updatedProfile);
-
       dispatch(updateDataProfile({
+        // et met à jour avec les nouvelles valeurs
         firstName: updatedProfile.firstName,
         lastName: updatedProfile.lastName,
         updatedAt: updatedProfile.updatedAt,

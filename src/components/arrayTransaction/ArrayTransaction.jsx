@@ -72,9 +72,13 @@ const ArrayTransaction = () => {
    */
   
   const toggle = (id) => {
+    //changeItems utilise .map pour parcourir tous les el du [itemArray]
     const changedItems = itemArray.map((item) =>
       item.id === id ? { ...item, isOpen: !item.isOpen } : item
+    //verifie si c'est bien  l id passé en param, si ok, cree un objet ...item 
+    //en copiant ttes les proprietes,  
     );
+    //met à jour le [itemArray] avec le [changedItems modifié]
     setItemArray(changedItems);
   };
 

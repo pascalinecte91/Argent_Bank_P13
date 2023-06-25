@@ -20,12 +20,17 @@ import "style/index.scss";
  * @returns {JSX.Element} Élément JSX représentant le composant App.
  */
 const App = () => {
+  // pour obtenir l url de l appli
   const location = useLocation();
+
+  // check le path / ( pour appliquer le style specifique)
   const isHome = location.pathname === "/";
+
+  // declenchera les actions Redux
   const dispatch = useDispatch();
 
   /**
-   * useEffect : pour vérifier si l'utilisateur est déjà connecté.
+   * useEffect : pour vérifier si l'utilisateur est déjà connecté, recupere le token
    * stayLogged pour maintenir la connexion et ne pas obliger à l'utilisateur de
    * se reconnecter à chaque fois pour se diriger ailleurs
    */

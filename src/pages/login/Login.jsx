@@ -4,6 +4,11 @@ import { useDispatch } from "react-redux";
 import { getLoggedIn } from "redux/reducer/loginReducer.js";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Composant de connexion
+ * @returns {JSX.Element} Élément JSX représentant le formulaire de connexion
+ */
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -12,7 +17,11 @@ const Login = () => {
   const [errors, setErrors] = useState({ email: null, password: null });
 
 
-  // hook verifie si l'user est deja connecté
+  /**
+   * Vérifie si l'utilisateur est déjà connecté
+   * 
+   *  hook verifie si l'user est deja connecté
+   */
   useEffect(() => {
     if (localStorage.getItem("token")) {
 
@@ -20,6 +29,9 @@ const Login = () => {
     }
   }, [navigate]);
 
+   /**
+   * Effectue la connexion de l'utilisateur
+   */
   const handleLogin = async () => {
     const data = await login(email, password);
      // Si la connexion a réussi, renvoie les données
@@ -42,7 +54,10 @@ const Login = () => {
     }
   };
 
-  // gere la soumission du formulaire de connexion
+   /**
+   * Gère la soumission du formulaire de connexion
+   * @param {Event} e - Événement de soumission du formulaire
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin();

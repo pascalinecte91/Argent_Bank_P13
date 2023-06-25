@@ -23,7 +23,7 @@ const login = async (email, password) => {
 /**
  * Obtient le profil d'un utilisateur avec un jeton
  * @param {string} token 
- * @returns {Promise<Object>} 
+ * @returns {Promise<Object>} Une promesse qui résout les données du profil ou rejette avec une erreur
  */
 const getProfile = async (token) => {
   // Envoie une requête POST à l'API pour obtenir le profil
@@ -50,8 +50,9 @@ const getProfile = async (token) => {
  * @param {string} firstName 
  * @param {string} lastName 
  * @param {string} token 
- * @returns {Promise<Object>} 
+ * @returns {Promise<Object>} Une promesse qui résout les données du profil mis à jour ou rejette avec une erreur
  */
+ 
 const updateProfile = async (firstName, lastName, token) => {
   // Envoie une requête PUT à l'API pour mettre à jour le profil
   const response = await fetch("http://localhost:3001/api/v1/user/profile", {
