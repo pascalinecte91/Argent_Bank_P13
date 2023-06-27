@@ -77,6 +77,8 @@ npm start
 npm run docs (script)
 
 npm run deploy : mise à jour  githubPages
+
+NB: projet avec node.js. version 12 = nvm pour conserver en local la version sur le projet
 ___
 ___
 

@@ -10,7 +10,7 @@ import { getLoggedOut } from "redux/reducer/loginReducer.js";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isLogged = useSelector((state) => state.login.connected);
+  const isLogged = useSelector((state) => state.login.connected); //ds le slice du store (login)
   let firstName = useSelector((state) => state.profile.firstName);
 
   // Si le prénom n'est pas disponible dans le state, on le récupère depuis le stockage local
